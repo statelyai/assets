@@ -1,4 +1,8 @@
-We’re excited to announce the [public beta of the Stately Editor](https://stately.ai/editor)! The Stately Editor is a tool for creating and editing state diagrams. We’ve received a lot of great feedback from the private beta testers, and now we’re delighted to share it with everyone.
+# 🚀 We’re giving you access to the Stately Editor beta
+
+We’re excited to announce the [public beta of the Stately Editor](https://stately.ai/editor)!
+
+The Stately Editor is a tool for creating and editing state diagrams. We’ve received a lot of great feedback from the private beta testers, and now we’re delighted to share it with everyone.
 
 The software development lifecycle today is a bit fragmented. It’s very difficult for user stories, designs, code, tests, and documentation to stay in sync, leading to parts going out-of-date or even missing entirely. Bugs increase, and adding or modifying features becomes increasingly complex. And even understanding all the features and use-cases of an app becomes a daunting task.
 
