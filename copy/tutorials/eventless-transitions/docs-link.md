@@ -1,0 +1,1 @@
+[Read more about eventless transitions in our docs](https://xstate.js.org/docs/guides/transitions.html#eventless-always-transitions)

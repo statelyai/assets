@@ -1,0 +1,1 @@
+[Read more about history states in our docs](https://xstate.js.org/docs/guides/history.html#history)

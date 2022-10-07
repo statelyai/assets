@@ -1,0 +1,1 @@
+[Read more about self-transitions in our docs](https://xstate.js.org/docs/guides/transitions.html#self-transitions)
