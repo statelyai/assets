@@ -1,0 +1,1 @@
+[Read more about guards in our docs](https://xstate.js.org/docs/guides/guards.html#guards-condition-functions)

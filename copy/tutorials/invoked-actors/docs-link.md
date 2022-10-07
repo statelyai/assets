@@ -1,0 +1,1 @@
+[Read more about actors in our docs](https://xstate.js.org/docs/about/concepts.html#actor-model)

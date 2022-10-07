@@ -1,0 +1,1 @@
+[Read more about delayed transitions in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#delayed-transitions)

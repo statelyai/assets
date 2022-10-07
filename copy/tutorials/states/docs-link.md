@@ -1,0 +1,1 @@
+[Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#states)
