@@ -1,6 +1,6 @@
 ### How to make a state a history state
 
-First, select the state you want to set as the history state. Then…
+First, select the state you want to set as a history state for the parent state. Then…
 
 #### Using the **quick actions** menu
 
