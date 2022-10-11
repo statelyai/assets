@@ -1,6 +1,6 @@
 ## Invoked actors
 
-When you run a statechart, it becomes an actor; a running process that can receive messages, send messages and change its behavior based on the messages it receives, which can cause effects outside of the actor.
+When you run a statechart, it becomes an actor: a running process that can receive messages, send messages and change its behavior based on the messages it receives, which can cause effects outside of the actor.
 
 An invoked actor is an actor that can execute its own actions and communicate with the machine. These invoked actors are started in a state and stopped when the state is exited.
 
