@@ -1,3 +1,5 @@
+## Final states
+
 When a machine reaches the final state, it can no longer receive any events, and anything running inside it is canceled and cleaned up. The box with a surrounding border icon represents the final state.
 
 A machine can have multiple final states or no final states.

@@ -1,0 +1,20 @@
+{
+  "name": "@statelyai/assets",
+  "version": "1.0.0",
+  "description": "Brand and other non-code assets.",
+  "main": "index.js",
+  "scripts": {
+    "tutorials": "node scripts/tutorials.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statelyai/assets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/statelyai/assets/issues"
+  },
+  "homepage": "https://github.com/statelyai/assets#readme"
+}
