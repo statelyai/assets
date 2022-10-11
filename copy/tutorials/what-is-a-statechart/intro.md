@@ -1,4 +1,4 @@
-### So what’s a statechart?
+### What is a statechart?
 
 Statecharts are fancy state machines used to model more complex logic.
 

@@ -1,3 +1,5 @@
+## Events & transitions
+
 A machine moves from state to state through **transitions**. Transitions are caused by events; when an event happens, the machine transitions to the next state.
 
 Transitions are “deterministic”; each combination of state and event always points to the same next state.
