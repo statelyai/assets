@@ -1,6 +1,6 @@
 ## History states
 
-A history state returns the parent state to its most recently active child state. The box with an H inside represents the history state.
+A history state returns the parent state to its most recently active child state. The box with an **H** inside represents the history state.
 
 The history state can be deep or shallow:
 
