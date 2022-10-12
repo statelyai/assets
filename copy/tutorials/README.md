@@ -22,11 +22,11 @@ The correct order for the tutorials if presented in a list is:
 8. Final states
 9. History states
 10. Guards
-11. Eventless (always) transitions
-12. Delayed (after) transitions
-13. State done events
-14. Self-transitions
-15. Entry & exit actions
+11. Entry & exit actions
+12. Eventless (always) transitions
+13. Delayed (after) transitions
+14. State done events
+15. Self-transitions
 16. Invoked actors
 17. Invoke done events
 18. Invoke error events
