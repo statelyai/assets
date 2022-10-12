@@ -13,21 +13,24 @@ Each folder represents a different concept or feature. Each file in the folder c
 The correct order for the tutorials if presented in a list is:
 
 1. What’s a state machine?
-2. States
-3. Transitions and events
-4. Parent states
-5. Parallel states
-6. History states
-7. Guards
-8. Eventless (always) transitions
-9. Delayed (after) transitions
-10. State done events
-11. Self-transitions
-12. Entry & exit actions
-13. Invoked actors
-14. Invoke done events
-15. Invoke error events
-16. Descriptions
+2. What’s a statechart?
+3. States
+4. Initial states
+5. Transitions and events
+6. Parent states
+7. Parallel states
+8. Final states
+9. History states
+10. Guards
+11. Eventless (always) transitions
+12. Delayed (after) transitions
+13. State done events
+14. Self-transitions
+15. Entry & exit actions
+16. Invoked actors
+17. Invoke done events
+18. Invoke error events
+19. Descriptions
 
 ## Heading levels
 
