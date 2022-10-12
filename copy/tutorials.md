@@ -1,113 +1,171 @@
-## Delayed transitions
+## Stately Studio tutorials
 
-**Delayed transitions** are transitions that only happen after a specified interval of time. If another event happens before the end of the timer, the transition doesn’t complete.
+The Stately Studio supports everything you need to build state machines and statecharts visually. We hope you find the following tutorials help you learn more about the statecharts concepts and using the Stately Studio.
 
-Delayed transitions are labeled “after” and often referred to as “after” transitions.
+If you have further questions or want to discuss modeling with other statecharts fans, [join our Discord community](https://discord.gg/xstate) or [chat with us live in our next office hours](https://youtube.com/c/statelyai).
 
-![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](video-player-highlighting-delayed-transition-2022-10-07.png)
+## What is a state machine?
 
-In a video player, we might want the video to be *Closed* out of fullscreen mode a few seconds after the video has *Stopped*, instead of closing the fullscreen mode suddenly as soon as the video is stopped. The eventless transition above transitions from the *Stopped* state to the *Closed* state after 5 seconds.
+State machines help us model how a process goes from state to state when an event occurs.
 
+State machines are useful in software development because they help us capture all the states, events and transitions between them. Using state machines makes it easier to find impossible states and spot undesirable transitions.
 
-### How to make an event into a delayed transition
+State machines model your application logic. Below is the logic for a video player. When the video is Played, it is opened into fullscreen mode. When the video is stopped, it closes out of fullscreen mode. When the video player is in fullscreen mode, it can be _Playing_ or _Paused_.
 
-First, select the event you want to replace with a delayed transition. Then…
+![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](full-video-machine-2022-10-07.png)
 
-#### Using the **quick actions** menu
+[Read more about state machines in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/)
 
-1. Right-click the event to bring up the **quick actions** menu.
-2. Choose **After** from the **Event type** options.
-3. Use the **Transition details** panel to change the delay time.
+### What is a statechart?
+
+Statecharts are fancy state machines used to model more complex logic.
+
+Statecharts are a visual extension to state machines that use boxes and arrows, much like flowcharts and sequence diagrams. Statecharts add extra features not available in ordinary state machines, including hierarchy (parent states), concurrency (parallel states) and communication (actors).
+
+When you make a state machine in the Stately Studio, it’s also a statechart!
+
+[Read more about statecharts in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/)
+
+## States
+
+A state describes the machine’s status or mode, which could be as simple as *Paused* and *Playing*. A state machine can only be in one state at a time.
+
+![Video player state machine with an initial Paused state and a Playing state.](paused-and-playing-states-2022-10-07.png)
+
+The rounded rectangle boxes are states. These states are “finite”; the machine can only move through the states you’ve pre-defined.
+
+### How to create a state
+
+1. Select your machine or an existing state.
+2. Create a new state inside your machine or existing state:
+   - Use the **+ State** button that appears above the selected state, or:
+   - Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
+
+[Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#states)
+
+## Initial state
+
+When a state machine starts, it enters the **initial state** first. A machine can only have one top-level initial state; if there were multiple initial states, the machine wouldn’t know where to start!
+
+The filled circle with an arrow icon represents the initial state.
+
+In our video player, paused is the initial state because the video player is paused by default and requires user interaction to start playing.
+
+[Screenshot of video player 1, with initial state highlighted]
+
+### How to change the initial state
+
+Each new machine or parent state will set the first new state as its initial state by default.
+
+#### Using the **quick actions** menu:
+
+1. Select the state you wish to make the new initial state.
+2. Right-click the state to bring up the **quick actions** menu.
+3. Choose **Mark as initial state** from the **quick actions** menu.
+
+#### Using the **State details** panel:
+
+1. Select the parent state or parent machine.
+2. Open the **State details** panel from the right tool menu.
+3. Choose
+
+[Read more about initial states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#initial-state)
+
+## Events & transitions
+
+A machine moves from state to state through **transitions**. Transitions are caused by events; when an event happens, the machine transitions to the next state.
+
+Transitions are “deterministic”; each combination of state and event always points to the same next state.
+
+The arrows are transitions, and the rounded rectangles on the arrow’s lines are events. Each transition has a **source** state which comes before the transition, and a **target** state, which comes after the transition. The transition’s arrow starts from the source state and points to the target state.
+
+![A video player state machine with an initial Paused State and a Playing state. The Play event transitions from Paused to Playing. The Pause event transitions from Playing to Paused.](transitions-and-events-2022-10-07.png)
+
+In the video player machine above, the events are *PLAY* and *PAUSE*. The *Play* event transitions from the *Paused* state to the *Playing* state. The *Pause* event transitions from the *Playing* state to the *Paused* state.
+
+### How to add a transition and event
+
+1. Select your machine or an existing state.
+2. Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
+
+### How to change the source and target states for a transition or event
+
+First select the transition or event you want to change. Then…
 
 #### Using the **Transition details** panel
 
-1. Open the **Transition details** panel from the right tool menu.
-2. Choose **After** from the **Event type** dropdown menu.
-3. Specify the delay time in milliseconds using the **Delay** text input.
-
-Delayed transitions are handy if you need to build timeouts and intervals into your application logic.
-
-[Read more about delayed transitions in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#delayed-transitions)
-
-## Descriptions
-
-You can add descriptions to state and event nodes to describe their purpose and share related notes with your team. Descriptions support markdown formatting, including links and images.
-
-The machine object will include your descriptions in the state or event's `description` when you export your statecharts to JSON.
-
-![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](video-player-highlighting-delayed-transition-2022-10-07.png)
-
-In the video player above, the text “The video player should be in full-screen mode” is a description of the *Opened* event.
-
-
-### How to add a description to a state
-
-1. Select the state.
-2. Open the **State details** panel from the right tool menu.
-3. Write your state’s description in the **Description** text area.
-
-### How to add a description to an event
-
-1. Select the event.
+1. Select the transition or event you wish to change.
 2. Open the **Transition details** panel from the right tool menu.
-3. Write your event’s description in the **Description** text area.
+3. Choose a new source state from the **Source** dropdown options.
+4. Choose a new target state from the **Target** dropdown options.
 
-[Find out more about descriptions from our office hours](https://www.youtube.com/watch?v=pLU4IOiWW0U&t=142s)
+#### Dragging the transition handles
 
-## Entry & exit actions
+1. Select the transition or event you want to change.
+2. Drag the transition’s handle connected to the source state to connect it to a new source state.
+3. Drag the transition’s handle connected to the target state to connect it to a new target state.
 
-While the statechart is running, it can execute other effects called actions.
+### How to switch the source and target states for a transition or event
 
-An action can be fired upon entry or exit of a state. Actions are “fire-and-forget effects”; once the machine has fired the action, it moves on and forgets the action. You can also fire actions on transitions.
+1. Select the transition or event.
+2. Right-click the state to bring up the **quick actions** menu.
+3. Choose **Switch source and target** from the **quick actions** menu.
 
-You can fire multiple entry and exit actions on a state. Top-level final states cannot have exit actions, since the machine is stopped and no further transitions can occur.
+[Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#transitions-and-events)
 
-[TODO: Why you might use entry and exit actions with examples.]
+## Parent states
 
+States can contain more states, also known as **child states**. These child states are only active when the parent state is active.
 
-### How to add an entry action to a state
+Child states are nested inside their parent states.
 
-1. Select the state you want to have an entry action.
+![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](full-video-machine-2022-10-07.png)
+
+In the video player above, the *Opened* state is a parent state to the *Playing*, *Paused*, and *Stopped* states. These states, their transitions, and their events are nested inside the *Opened* state.
+
+### How to add a child state
+
+First, select your machine or an existing state where you want to create the child state. Then…
+
+- Use the **+ State** button that appears above the selected state to create a nested child state. Or…
+- If a state already contains child states, you can double-click inside the parent state to create another child state.
+
+### How to change the parent state of a child state
+
+Using the **State details** panel:
+
+1. Select the child state you want to reparent.
 2. Open the **State details** panel from the right tool menu.
-3. Use the **+** icon alongside the **Entry actions** to add a new action.
-4. Use the **Custom** tab under **Entry actions** to input the **type** for the entry action.
-5. Use the **Assign** tab under **Entry actions** to assign **key** and **assignment** pairs to the entry action.
-6. Save the entry action using the **Save** button.
+3. Choose your desired new parent from the **Parent** dropdown menu.
 
-### How to add an exit action to a state
+[Read more about parent and child states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#compound-states)
 
-1. Select the state you want to have an exit action.
-2. Open the **State details** panel from the right tool menu.
-3. Use the **+** icon alongside the **Exit actions** to add a new action.
-4. Use the **Custom** tab under **Exit actions** to input the **type** for the exit action.
-5. Use the **Assign** tab under **Exit actions** to assign **key** and **assignment** pairs to the exit action.
-6. Save the entry action using the **Save** button.
+## Parallel states
 
-[Read more about entry and exit actions in our docs](https://xstate.js.org/docs/guides/actions.html#actions)
+A parallel state is a parent state separated into multiple regions of child states, where each region is active simultaneously.
 
-## Eventless transitions
+A dashed line borders each region.
 
-**Eventless transitions** are transitions without events. These transitions are *always* taken after any transition in their state is enabled. No event is necessary to trigger the transition.
+[TODO: Why you might use a parallel state with an example of parallel states.]
 
-Eventless transitions are labeled “always” and often referred to as “always” transitions.
+### How to make a state a parallel state
 
-[TODO: Why you might use an eventless transition with example.]
+First, select the first state you want to set as a parallel state. Then…
 
-
-### How to make an event into an eventless transition
-
-First, select the event you want to replace with an eventless transition. Then…
-
-#### Using the **quick actions** menu
+#### Using the **quick actions** menu:
 
 1. Right-click the state to bring up the **quick actions** menu.
-2. Choose **Always** from the **Event type** options.
+2. Choose **Parallel** from the **Type** options.
 
-#### Using the **Transition details** panel
-1. Open the **Transition details** panel from the right tool menu.
-2. Choose **Always** from the **Event type** dropdown menu.
+#### Using the **State details** panel:
 
-[Read more about eventless transitions in our docs](https://xstate.js.org/docs/guides/transitions.html#eventless-always-transitions)
+1. Select the state you want to set as the final state.
+2. Open the **State details** panel from the right tool menu.
+3. Choose **Parallel** from the **Type** dropdown menu.
+
+Other child states that share the same parent state will be automatically set as parallel states.
+
+[Read more about parallel states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#compound-states)
 
 ## Final states
 
@@ -118,7 +176,6 @@ A machine can have multiple final states or no final states.
 In the video player below, *Stopped* is the final child state in the *Opened* state. When the video player is *Stopped*, the video player moves to its *Closed* state.
 
 [Video player 0, highlighting final state]
-
 
 ### How to make a state a final state
 
@@ -137,6 +194,35 @@ First, select the state you want to set as the final state.
 
 [Read more about final states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#final-state)
 
+## History states
+
+A history state returns the parent state to its most recently active child state. The box with an **H** inside represents the history state.
+
+The history state can be deep or shallow:
+
+- A shallow history state remembers the immediate child’s state.
+- A deep history state remembers the deepest active state or states inside its child states.
+
+[TODO: Why you might use a history state with example.]
+
+### How to make a state a history state
+
+First, select the state you want to set as a history state for the parent state. Then…
+
+#### Using the **quick actions** menu
+
+1. Right-click the state to bring up the **quick actions** menu.
+2. Choose **History** from the **Type** options.
+
+#### Using the **State details** panel
+
+1. Select the state you want to set as the final state.
+2. Open the **State details** panel from the right tool menu.
+3. Choose **History** from the **Type** dropdown menu.
+4. Use the **History** toggle that appears when the state has a **History Type** to choose between **Shallow** and **Deep** history options.
+
+[Read more about history states in our docs](https://xstate.js.org/docs/guides/history.html#history)
+
 ## Guards
 
 A **guard** is a condition that the machine checks when it goes through an event. If the condition is true, the machine follows the transition to the next state. If the condition is false, the machine follows the rest of the conditions to the next state. Any transition can be a guarded transition.
@@ -144,7 +230,6 @@ A **guard** is a condition that the machine checks when it goes through an eve
 Guards are numbered in the order they are checked and labeled with “if” or “else if” along with their condition. Multiple guards on the same events are connected with a dotted line.
 
 [TODO: Why you might use a guard with example.]
-
 
 ## How to add a guard to an event
 
@@ -170,62 +255,163 @@ Use the **+ Transition** button to create more guards on the same transition.
 
 [Read more about guards in our docs](https://xstate.js.org/docs/guides/guards.html#guards-condition-functions)
 
-## History states
+## Eventless transitions
 
-A history state returns the parent state to its most recently active child state. The box with an **H** inside represents the history state.
+**Eventless transitions** are transitions without events. These transitions are *always* taken after any transition in their state is enabled. No event is necessary to trigger the transition.
 
-The history state can be deep or shallow:
+Eventless transitions are labeled “always” and often referred to as “always” transitions.
 
-- A shallow history state remembers the immediate child’s state.
-- A deep history state remembers the deepest active state or states inside its child states.
+[TODO: Why you might use an eventless transition with example.]
 
-[TODO: Why you might use a history state with example.]
+### How to make an event into an eventless transition
 
-
-### How to make a state a history state
-
-First, select the state you want to set as a history state for the parent state. Then…
+First, select the event you want to replace with an eventless transition. Then…
 
 #### Using the **quick actions** menu
 
 1. Right-click the state to bring up the **quick actions** menu.
-2. Choose **History** from the **Type** options.
+2. Choose **Always** from the **Event type** options.
 
-#### Using the **State details** panel
+#### Using the **Transition details** panel
 
-1. Select the state you want to set as the final state.
+1. Open the **Transition details** panel from the right tool menu.
+2. Choose **Always** from the **Event type** dropdown menu.
+
+[Read more about eventless transitions in our docs](https://xstate.js.org/docs/guides/transitions.html#eventless-always-transitions)
+
+## Delayed transitions
+
+**Delayed transitions** are transitions that only happen after a specified interval of time. If another event happens before the end of the timer, the transition doesn’t complete.
+
+Delayed transitions are labeled “after” and often referred to as “after” transitions.
+
+![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](video-player-highlighting-delayed-transition-2022-10-07.png)
+
+In a video player, we might want the video to be *Closed* out of fullscreen mode a few seconds after the video has *Stopped*, instead of closing the fullscreen mode suddenly as soon as the video is stopped. The eventless transition above transitions from the *Stopped* state to the *Closed* state after 5 seconds.
+
+### How to make an event into a delayed transition
+
+First, select the event you want to replace with a delayed transition. Then…
+
+#### Using the **quick actions** menu
+
+1. Right-click the event to bring up the **quick actions** menu.
+2. Choose **After** from the **Event type** options.
+3. Use the **Transition details** panel to change the delay time.
+
+#### Using the **Transition details** panel
+
+1. Open the **Transition details** panel from the right tool menu.
+2. Choose **After** from the **Event type** dropdown menu.
+3. Specify the delay time in milliseconds using the **Delay** text input.
+
+Delayed transitions are handy if you need to build timeouts and intervals into your application logic.
+
+[Read more about delayed transitions in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#delayed-transitions)
+
+## State done event
+
+A **state done event** transitions from a parent state when one of its child states reaches its final state. State done events are labeled “onDone.”
+
+![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s an onDone event from the parent Opened state back to the Closed state.](video-playing-highlighting-ondone-2022-10-07.png)
+
+In the video player above, when the video player reaches the *Stopped* state, the *Opened* state transitions through the *onDone* state done event to the *Closed* state.
+
+### How to add a state done event to a parent state
+
+1. Check the final child state has its state type set to **Final**. If the parent state doesn’t contain a final child state, the state done event type will not be available for transitions from the parent state.
+2. Select the parent state.
+3. Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
+4. Select the newly-created event. Then…
+
+#### Using the **quick actions** menu
+
+1. Right-click the state to bring up the **quick actions** menu.
+2. Choose **State done event** from the **Event type** options.
+
+#### Using the **Transition details** panel
+
+1. Open the **Transition details** panel from the right tool menu.
+2. Choose **State done event** from the **Event type** dropdown menu.
+
+[Read more about state done events in our docs](https://xstate.js.org/docs/guides/states.html#state-methods-and-properties)
+
+## Self-transitions
+
+A **self-transition** starts and ends in the same state.
+
+Self-transitions can be used to restart a state.
+
+[TODO: Why you might use self-transitions with example.]
+
+### How to make an event into a self-transition
+
+#### Using the **quick actions** menu
+
+1. Right-click the event to bring up the **quick actions** menu.
+2. Choose **Make self transition** from the **quick actions** menu.
+
+#### Dragging the transition arrow
+
+1. Select the event.
+2. Grab the circular handle at the arrow end of the transition and drag the handle to connect it back to the source state.
+
+[Read more about self-transitions in our docs](https://xstate.js.org/docs/guides/transitions.html#self-transitions)
+
+## Entry & exit actions
+
+While the statechart is running, it can execute other effects called actions.
+
+An action can be fired upon entry or exit of a state. Actions are “fire-and-forget effects”; once the machine has fired the action, it moves on and forgets the action. You can also fire actions on transitions.
+
+You can fire multiple entry and exit actions on a state. Top-level final states cannot have exit actions, since the machine is stopped and no further transitions can occur.
+
+[TODO: Why you might use entry and exit actions with examples.]
+
+### How to add an entry action to a state
+
+1. Select the state you want to have an entry action.
 2. Open the **State details** panel from the right tool menu.
-3. Choose **History** from the **Type** dropdown menu.
-4. Use the **History** toggle that appears when the state has a **History Type** to choose between **Shallow** and **Deep** history options.
+3. Use the **+** icon alongside the **Entry actions** to add a new action.
+4. Use the **Custom** tab under **Entry actions** to input the **type** for the entry action.
+5. Use the **Assign** tab under **Entry actions** to assign **key** and **assignment** pairs to the entry action.
+6. Save the entry action using the **Save** button.
 
+### How to add an exit action to a state
 
-[Read more about history states in our docs](https://xstate.js.org/docs/guides/history.html#history)
-
-## Initial state
-
-When a state machine starts, it enters the **initial state** first. A machine can only have one top-level initial state; if there were multiple initial states, the machine wouldn’t know where to start!
-
-The filled circle with an arrow icon represents the initial state.
-
-In our video player, paused is the initial state because the video player is paused by default and requires user interaction to start playing.
-
-[Screenshot of video player 1, with initial state highlighted]
-
-### How to change the initial state
-
-Each new machine or parent state will set the first new state as its initial state by default.
-
-#### Using the **quick actions** menu:
-1. Select the state you wish to make the new initial state.
-2. Right-click the state to bring up the **quick actions** menu.
-3. Choose **Mark as initial state** from the **quick actions** menu.
-
-#### Using the **State details** panel:
-1. Select the parent state or parent machine.
+1. Select the state you want to have an exit action.
 2. Open the **State details** panel from the right tool menu.
-3. Choose
+3. Use the **+** icon alongside the **Exit actions** to add a new action.
+4. Use the **Custom** tab under **Exit actions** to input the **type** for the exit action.
+5. Use the **Assign** tab under **Exit actions** to assign **key** and **assignment** pairs to the exit action.
+6. Save the entry action using the **Save** button.
 
-[Read more about initial states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#initial-state)
+[Read more about entry and exit actions in our docs](https://xstate.js.org/docs/guides/actions.html#actions)
+
+## Invoked actors
+
+When you run a statechart, it becomes an actor: a running process that can receive messages, send messages and change its behavior based on the messages it receives, which can cause effects outside of the actor.
+
+An invoked actor is an actor that can execute its own actions and communicate with the machine. These invoked actors are started in a state and stopped when the state is exited.
+
+Invoked actors are often referred to as “invocations.” They are labeled on their invoking state with “Invoke /” followed by the actor’s source name and ID.
+
+You can invoke multiple actors on a single state. Top-level final states cannot have invoked actors.
+
+![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](video-player-highlighting-invoked-actor-2022-10-07.png)
+
+In the video player above, the *startVideo* actor is invoked when the video player is in the *Opened* state.
+
+### How to invoke actors on a state
+
+1. Select the state you want to invoke an actor.
+2. Open the **State details** panel from the right tool menu.
+3. Use the **+** icon alongside the **Invocations** to add a new action.
+4. Add the source for the actor using the **src** text input.
+5. Add the ID for the actor using the **ID** text input.
+6. Save the invoked actor using the **Save** button.
+
+[Read more about actors in our docs](https://xstate.js.org/docs/about/concepts.html#actor-model)
 
 ## Invoke done events
 
@@ -268,222 +454,26 @@ You can also change an existing event into an invoked error event using the **q
 
 [Read more about actors in our docs](https://xstate.js.org/docs/about/concepts.html#actor-model)
 
-## Invoked actors
+## Descriptions
 
-When you run a statechart, it becomes an actor: a running process that can receive messages, send messages and change its behavior based on the messages it receives, which can cause effects outside of the actor.
+You can add descriptions to state and event nodes to describe their purpose and share related notes with your team. Descriptions support markdown formatting, including links and images.
 
-An invoked actor is an actor that can execute its own actions and communicate with the machine. These invoked actors are started in a state and stopped when the state is exited.
+The machine object will include your descriptions in the state or event's `description` when you export your statecharts to JSON.
 
-Invoked actors are often referred to as “invocations.” They are labeled on their invoking state with “Invoke /” followed by the actor’s source name and ID.
+![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](video-player-highlighting-delayed-transition-2022-10-07.png)
 
-You can invoke multiple actors on a single state. Top-level final states cannot have invoked actors.
+In the video player above, the text “The video player should be in full-screen mode” is a description of the *Opened* event.
 
-![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](video-player-highlighting-invoked-actor-2022-10-07.png)
+### How to add a description to a state
 
-In the video player above, the *startVideo* actor is invoked when the video player is in the *Opened* state.
-
-
-### How to invoke actors on a state
-
-1. Select the state you want to invoke an actor.
+1. Select the state.
 2. Open the **State details** panel from the right tool menu.
-3. Use the **+** icon alongside the **Invocations** to add a new action.
-4. Add the source for the actor using the **src** text input.
-5. Add the ID for the actor using the **ID** text input.
-6. Save the invoked actor using the **Save** button.
+3. Write your state’s description in the **Description** text area.
 
-[Read more about actors in our docs](https://xstate.js.org/docs/about/concepts.html#actor-model)
-
-## Parallel states
-
-A parallel state is a parent state separated into multiple regions of child states, where each region is active simultaneously.
-
-A dashed line borders each region.
-
-[TODO: Why you might use a parallel state with an example of parallel states.]
-
-### How to make a state a parallel state
-
-First, select the first state you want to set as a parallel state. Then…
-
-#### Using the **quick actions** menu:
-
-1. Right-click the state to bring up the **quick actions** menu.
-2. Choose **Parallel** from the **Type** options.
-
-#### Using the **State details** panel:
-
-1. Select the state you want to set as the final state.
-2. Open the **State details** panel from the right tool menu.
-3. Choose **Parallel** from the **Type** dropdown menu.
-
-Other child states that share the same parent state will be automatically set as parallel states.
-
-[Read more about parallel states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#compound-states)
-
-## Parent states
-
-States can contain more states, also known as **child states**. These child states are only active when the parent state is active.
-
-Child states are nested inside their parent states.
-
-![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](full-video-machine-2022-10-07.png)
-
-In the video player above, the *Opened* state is a parent state to the *Playing*, *Paused*, and *Stopped* states. These states, their transitions, and their events are nested inside the *Opened* state.
-
-### How to add a child state
-
-First, select your machine or an existing state where you want to create the child state. Then…
-
-- Use the **+ State** button that appears above the selected state to create a nested child state. Or…
-- If a state already contains child states, you can double-click inside the parent state to create another child state.
-
-### How to change the parent state of a child state
-
-Using the **State details** panel:
-
-1. Select the child state you want to reparent.
-2. Open the **State details** panel from the right tool menu.
-3. Choose your desired new parent from the **Parent** dropdown menu.
-
-[Read more about parent and child states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#compound-states)
-
-## Self-transitions
-
-A **self-transition** starts and ends in the same state.
-
-Self-transitions can be used to restart a state.
-
-[TODO: Why you might use self-transitions with example.]
-
-
-### How to make an event into a self-transition
-
-#### Using the **quick actions** menu
-
-1. Right-click the event to bring up the **quick actions** menu.
-2. Choose **Make self transition** from the **quick actions** menu.
-
-#### Dragging the transition arrow
+### How to add a description to an event
 
 1. Select the event.
-2. Grab the circular handle at the arrow end of the transition and drag the handle to connect it back to the source state.
-
-[Read more about self-transitions in our docs](https://xstate.js.org/docs/guides/transitions.html#self-transitions)
-
-## State done event
-
-A **state done event** transitions from a parent state when one of its child states reaches its final state. State done events are labeled “onDone.”
-
-![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s an onDone event from the parent Opened state back to the Closed state.](video-playing-highlighting-ondone-2022-10-07.png)
-
-In the video player above, when the video player reaches the *Stopped* state, the *Opened* state transitions through the *onDone* state done event to the *Closed* state.
-
-
-### How to add a state done event to a parent state
-
-1. Check the final child state has its state type set to **Final**. If the parent state doesn’t contain a final child state, the state done event type will not be available for transitions from the parent state.
-2. Select the parent state.
-3. Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
-4. Select the newly-created event. Then…
-
-#### Using the **quick actions** menu
-
-1. Right-click the state to bring up the **quick actions** menu.
-2. Choose **State done event** from the **Event type** options.
-
-#### Using the **Transition details** panel
-
-1. Open the **Transition details** panel from the right tool menu.
-2. Choose **State done event** from the **Event type** dropdown menu.
-
-[Read more about state done events in our docs](https://xstate.js.org/docs/guides/states.html#state-methods-and-properties)
-
-## States
-
-A state describes the machine’s status or mode, which could be as simple as *Paused* and *Playing*. A state machine can only be in one state at a time.
-
-![Video player state machine with an initial Paused state and a Playing state.](paused-and-playing-states-2022-10-07.png)
-
-The rounded rectangle boxes are states. These states are “finite”; the machine can only move through the states you’ve pre-defined.
-
-
-### How to create a state
-
-1. Select your machine or an existing state.
-2. Create a new state inside your machine or existing state:
-    - Use the **+ State** button that appears above the selected state, or:
-    - Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
-
-
-[Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#states)
-
-## Events & transitions
-
-A machine moves from state to state through **transitions**. Transitions are caused by events; when an event happens, the machine transitions to the next state.
-
-Transitions are “deterministic”; each combination of state and event always points to the same next state.
-
-The arrows are transitions, and the rounded rectangles on the arrow’s lines are events. Each transition has a **source** state which comes before the transition, and a **target** state, which comes after the transition. The transition’s arrow starts from the source state and points to the target state.
-
-![A video player state machine with an initial Paused State and a Playing state. The Play event transitions from Paused to Playing. The Pause event transitions from Playing to Paused.](transitions-and-events-2022-10-07.png)
-
-In the video player machine above, the events are *PLAY* and *PAUSE*. The *Play* event transitions from the *Paused* state to the *Playing* state. The *Pause* event transitions from the *Playing* state to the *Paused* state.
-
-
-### How to add a transition and event
-
-1. Select your machine or an existing state.
-2. Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
-
-### How to change the source and target states for a transition or event
-
-First select the transition or event you want to change. Then…
-
-#### Using the **Transition details** panel
-
-1. Select the transition or event you wish to change.
 2. Open the **Transition details** panel from the right tool menu.
-3. Choose a new source state from the **Source** dropdown options.
-4. Choose a new target state from the **Target** dropdown options.
+3. Write your event’s description in the **Description** text area.
 
-#### Dragging the transition handles
-
-1. Select the transition or event you want to change.
-2. Drag the transition’s handle connected to the source state to connect it to a new source state.
-3. Drag the transition’s handle connected to the target state to connect it to a new target state.
-
-### How to switch the source and target states for a transition or event
-
-1. Select the transition or event.
-2. Right-click the state to bring up the **quick actions** menu.
-3. Choose **Switch source and target** from the **quick actions** menu.
-
-[Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#transitions-and-events)
-
-## What is a state machine?
-
-State machines help us model how a process goes from state to state when an event occurs.
-
-State machines are useful in software development because they help us capture all the states, events and transitions between them. Using state machines makes it easier to find impossible states and spot undesirable transitions.
-
-State machines model your application logic. Below is the logic for a video player. When the video is Played, it is opened into fullscreen mode. When the video is stopped, it closes out of fullscreen mode. When the video player is in fullscreen mode, it can be _Playing_ or _Paused_.
-
-![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](full-video-machine-2022-10-07.png)
-
-
-
-
-[Read more about state machines in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/)
-
-### What is a statechart?
-
-Statecharts are fancy state machines used to model more complex logic.
-
-Statecharts are a visual extension to state machines that use boxes and arrows, much like flowcharts and sequence diagrams. Statecharts add extra features not available in ordinary state machines, including hierarchy (parent states), concurrency (parallel states) and communication (actors).
-
-When you make a state machine in the Stately Studio, it’s also a statechart!
-
-
-[Read more about statecharts in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/)
-
+[Find out more about descriptions from our office hours](https://www.youtube.com/watch?v=pLU4IOiWW0U&t=142s)
