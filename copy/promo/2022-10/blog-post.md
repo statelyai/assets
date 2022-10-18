@@ -1,6 +1,6 @@
 # Introducing Stately Studio 1.0
 
-We’re excited to announce the release of Stately Studio 1.0! 🚀 We strongly believe that app logic should be visually collaborative, and we’ve been worked hard to make that a reality. We’ve been working on Stately Studio for over a year now, and we’re thrilled to share it with you.
+We’re excited to announce the release of Stately Studio 1.0! 🚀 Our mission is for all app logic should be visually collaborative and accessible to your entire team, and we’ve been working hard to make that a reality.
 
 ## Thank you for your support!
 
@@ -48,6 +48,7 @@ And others. [Request your favorite export options on our Canny roadmap](https://
 We have so many things planned for the future:
 
 - A Stately GitHub integration for public and private repos
+- Machine revisions: save machines as specific versions and see visual diffs 
 - XState parity: supporting all of XState’s features in the Stately Studio (we’re almost there!)
 - More export options and an embeddable editor
 - Support for other graph-based tools, CI/CD pipelines and other workflow engines/DSLs
@@ -56,6 +57,6 @@ We have so many things planned for the future:
 
 ## Try out the Studio
 
-All our new Pro features are available with a 30 day free trial you can try with your whole team. Upgrade today using the Upgrade button in [the Stately Studio](https://stately.ai/editor) or Sign in with GitHub to create a new account.
+All our new Pro features are available with a 30-day free trial you can try with your whole team. Upgrade today using the Upgrade button in [the Stately Studio](https://stately.ai/editor).
 
 Have any questions? Join us in [our office hours live stream this Friday](https://www.youtube.com/watch?v=JcT7iJOPFjE), where we’ll answer your questions and give you more demos.
