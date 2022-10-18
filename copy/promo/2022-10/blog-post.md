@@ -1,6 +1,6 @@
 # Introducing Stately Studio 1.0
 
-We’re excited to announce the release of Stately Studio 1.0! 🚀 We strongly believe that app logic should be visually collaborative, and we’ve been worked hard to make that a reality. We’ve been working on Stately Studio for over a year now, and we’re thrilled to share it with you.
+We’re excited to announce the release of Stately Studio 1.0! 🚀 Our mission is for all app logic should be visually collaborative and accessible to your entire team, and we’ve been working hard to make that a reality.
 
 ## Thank you for your support!
 
