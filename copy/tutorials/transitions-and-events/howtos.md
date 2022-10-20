@@ -1,6 +1,6 @@
 ### How to add a transition and event
 
-1. Select your machine or an existing state.
+1. Select an existing state.
 2. Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
 
 ### How to change the source and target states for a transition or event
