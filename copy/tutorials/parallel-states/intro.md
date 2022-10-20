@@ -4,4 +4,11 @@ A parallel state is a parent state separated into multiple regions of child stat
 
 A dashed line borders each region.
 
-[TODO: Why you might use a parallel state with an example of parallel states.]
+![]()
+
+In the video player machine above, the video and audio states are active at the same time, which means the following combinations of states can happen simultaneously:
+
+- video playing, audio muted
+- video playing, audio unmuted
+- video stopped, audio muted
+- video stopped, audio unmuted
