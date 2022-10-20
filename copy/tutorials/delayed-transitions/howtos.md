@@ -13,5 +13,3 @@ First, select the event you want to replace with a delayed transition. Then…
 1. Open the **Transition details** panel from the right tool menu.
 2. Choose **After** from the **Event type** dropdown menu.
 3. Specify the delay time in milliseconds using the **Delay** text input.
-
-Delayed transitions are handy if you need to build timeouts and intervals into your application logic.
