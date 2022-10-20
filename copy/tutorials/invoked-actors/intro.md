@@ -4,7 +4,7 @@ When you run a statechart, it becomes an actor: a running process that can recei
 
 An invoked actor is an actor that can execute its own actions and communicate with the machine. These invoked actors are started in a state and stopped when the state is exited.
 
-Invoked actors are often referred to as “invocations.” They are labeled on their invoking state with “Invoke /” followed by the actor’s source name and ID.
+Invoked actors are are labeled on their invoking state with “Invoke /” followed by the actor’s source name and ID.
 
 You can invoke multiple actors on a single state. Top-level final states cannot have invoked actors.
 
