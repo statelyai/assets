@@ -1,6 +1,6 @@
 ## Delayed transitions
 
-**Delayed transitions** are transitions that only happen after a specified interval of time. If another event happens before the end of the timer, the transition doesn’t complete.
+**Delayed transitions** are transitions that only happen after a specified interval of time. If another event happens before the end of the timer, the transition doesn’t complete. Delayed transitions are handy if you need to build timeouts and intervals into your application logic.
 
 Delayed transitions are labeled “after” and often referred to as “after” transitions.
 
