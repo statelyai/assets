@@ -6,4 +6,6 @@ An action can be fired upon entry or exit of a state. Actions are “fire-and-fo
 
 You can fire multiple entry and exit actions on a state. Top-level final states cannot have exit actions, since the machine is stopped and no further transitions can occur.
 
-[TODO: Why you might use entry and exit actions with examples.]
+![Entry and exit actions video player]()
+
+In our video player, we have entry and exit actions on the Playing state. We use the entry action of playVideo to fire an effect playing the video on entry to the Playing state. We use the exit action of pauseVideo to fire an effect pausing the video when the Playing state is exited.
