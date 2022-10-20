@@ -10,4 +10,4 @@ Each new machine or parent state will set the first new state as its initial sta
 #### Using the **State details** panel:
 1. Select the parent state or parent machine.
 2. Open the **State details** panel from the right tool menu.
-3. Choose
+3. Choose the desired initial state from the Initial state dropdown menu.
