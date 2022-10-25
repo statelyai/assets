@@ -5,3 +5,5 @@
 Eventless transitions are labeled “always” and often referred to as “always” transitions.
 
 [TODO: Why you might use an eventless transition with example.]
+
+[View this machine in the Stately Studio]().

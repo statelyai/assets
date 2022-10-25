@@ -8,6 +8,10 @@ Each folder represents a different concept or feature. Each file in the folder c
 2. `howtos.md`: instructions on how to use the feature in the Stately Studio. This may not be used if we’re short on space, and can be replaced by…
 3. `docs-link.md`: this is the link text and url that can be used in place of, or in addition to, the howtos, to direct the reader to further information. Currently these links link to the XState docs at xstate.js.org.
 
+## Images
+
+Each image has two versions, one for large/expanded view, the other (with the suffix `-small`) for the in-studio thumbnail view.
+
 ## Order
 
 The correct order for the tutorials if presented in a list is:
