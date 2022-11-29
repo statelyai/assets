@@ -501,6 +501,67 @@ You can also change an existing event into an invoked error event using the **q
 
 [Read more about actors in our docs](https://xstate.js.org/docs/about/concepts.html#actor-model)
 
+## Import from code
+
+You can import an existing machine from JavaScript and TypeScript using the code panel in the right tool menu or from the **Machines** list in the left drawer.
+
+Importing from code is helpful if you’ve already built machines while working with [XState](https://xstate.js.org/docs), or have created a machine using our older [Stately Viz](https://stately.ai/viz) but haven’t yet tried the Stately visual editor.
+
+### How to import code
+
+Your code should be formatted as a [`createMachine()` factory function](https://xstate.js.org/docs/guides/machines.html) before import. The importer has basic validation in case your machine has basic errors, including reminding you if the `createMachine` definition is missing.
+
+Caution: importing code will overwrite your current or selected machine unless you create a new machine from the **Machines list** inside a project. 
+
+You may have multiple `createMachine`s included in the code you insert in the text area, but the Studio will only import the first machine found in the code. We plan to support importing multiple machines in the future.
+
+#### How to import code to overwrite your machine from the code panel
+
+1. Open the **Code** panel from the right tool menu.
+2. Use the **Import** button to open the importer.
+3. Paste or type your machine code into the text area.
+4. Use the **Import** button to import your machine, overwriting your current machine.
+
+#### How to import code to overwrite a machine from the machines list
+
+1. Open the **Machines** list from the left drawer menu.
+2. Use the **...** icon alongside a machine to open the machine options menu.
+3. Use the **Import Code** option to open the import text area.
+5. Paste or type your machine code into the text area.
+6. Use the **Import** button to import your machine, overwriting the selected machine.
+
+#### Create a new machine inside a project using import code
+
+1. Open the **Machines** list from the left drawer menu.
+2. Use the **+** icon alongside the **Machines** heading to open the new machine options.
+3. Enter a name for your new machine in the text input.
+4. Select the **Import Code** switch to open the import text area.
+5. Paste or type your machine code into the text area.
+6. Use the **Create machine** button to import your machine as a new machine in your project.
+
+[Read more about using XState in our docs](https://xstate.js.org/docs/)
+
+## Export as code
+
+You can export your machine as JSON, JavaScript, and TypeScript code using the code panel in the right tool menu. You can also export as code from the **Export machine** dialog using the export icon button in the editor’s top bar.
+
+Exporting as code is useful if you want to use your machine with [XState](https://xstate.js.org) inside your codebase or if you want to duplicate your machine without using **Fork**.
+
+### Export code from the code panel
+
+1. Open the **Code** panel from the right tool menu.
+2. Use the JSON, JavaScript, or TypeScript buttons to display the code in your preferred format in the text area.
+3. Use the **Copy** button to copy the code to your clipboard.
+3. Paste into your code editor.
+
+### Export code from the Export machine dialog
+
+1. Use the export icon button in the editor’s top bar to open the **Export machine** dialog.
+2. Use the JSON, JavaScript, or TypeScript button to copy the code in your preferred format to your clipboard.
+3. Paste into your code editor.
+
+[Read more about using XState in our docs](https://xstate.js.org/docs/)
+
 ## Descriptions
 
 You can add descriptions to state and event nodes to describe their purpose and share related notes with your team. Descriptions support markdown formatting, including links and images.

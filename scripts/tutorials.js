@@ -26,6 +26,8 @@ const baseSortedArray = [
   "invoked-actors",
   "invoke-done-events",
   "invoke-error-events",
+  "import-from-code",
+  "export-as-code",
   "descriptions",
 ];
 
