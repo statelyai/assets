@@ -262,6 +262,10 @@ Guards are numbered in the order they are checked and labeled with “if” or �
 
 [TODO: Why you might use a guard with example.]
 
+![A video player state machine with an initial Paused State and a Playing state. The transition from Playing to Paused has a guard numbered 1 and labeled ‘If time left is zero’. The first guard is joined to a second guard by a dotted line. The second guard is numbered 2 and is labeled ‘Else if time left is more than zero.’ The second guard’s transition targets the Playing state.](guards-2022-12-06-small.png)
+
+[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=96f3bfce-147a-4aa0-ae2d-674cdfcb14ec).
+
 
 ## How to add a guard to an event
 
@@ -306,7 +310,7 @@ In our video player, we have entry and exit actions on the Playing state. We use
 
 1. Select the state you want to have an entry action.
 2. Open the **State details** panel from the right tool menu.
-3. Use the **+** icon alongside the **Entry actions** to add a new action.
+3. Use the **+** plus icon alongside the **Entry actions** to add a new action.
 4. Use the **Custom** tab under **Entry actions** to input the **type** for the entry action.
 5. Use the **Assign** tab under **Entry actions** to assign **key** and **assignment** pairs to the entry action.
 6. Save the entry action using the **Save** button.
@@ -315,7 +319,7 @@ In our video player, we have entry and exit actions on the Playing state. We use
 
 1. Select the state you want to have an exit action.
 2. Open the **State details** panel from the right tool menu.
-3. Use the **+** icon alongside the **Exit actions** to add a new action.
+3. Use the **+** plus icon alongside the **Exit actions** to add a new action.
 4. Use the **Custom** tab under **Exit actions** to input the **type** for the exit action.
 5. Use the **Assign** tab under **Exit actions** to assign **key** and **assignment** pairs to the exit action.
 6. Save the entry action using the **Save** button.
@@ -452,7 +456,7 @@ In the video player above, the *startVideo* actor is invoked when the video pl
 
 1. Select the state you want to invoke an actor.
 2. Open the **State details** panel from the right tool menu.
-3. Use the **+** icon alongside the **Invoked actors** to add a new action.
+3. Use the **+** plus icon alongside the **Invoked actors** to add a new action.
 4. Add the source for the actor using the **src** text input.
 5. Add the ID for the actor using the **ID** text input.
 6. Save the invoked actor using the **Save** button.
@@ -525,7 +529,7 @@ You may have multiple `createMachine`s included in the code you insert in the te
 #### How to import code to overwrite a machine from the machines list
 
 1. Open the **Machines** list from the left drawer menu.
-2. Use the **...** icon alongside a machine to open the machine options menu.
+2. Use the **...** triple dot icon alongside a machine to open the machine options menu.
 3. Use the **Import Code** option to open the import text area.
 5. Paste or type your machine code into the text area.
 6. Use the **Import** button to import your machine, overwriting the selected machine.
@@ -533,7 +537,7 @@ You may have multiple `createMachine`s included in the code you insert in the te
 #### Create a new machine inside a project using import code
 
 1. Open the **Machines** list from the left drawer menu.
-2. Use the **+** icon alongside the **Machines** heading to open the new machine options.
+2. Use the **+** plus icon alongside the **Machines** heading to open the new machine options.
 3. Enter a name for your new machine in the text input.
 4. Select the **Import Code** switch to open the import text area.
 5. Paste or type your machine code into the text area.
