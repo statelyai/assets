@@ -6,4 +6,4 @@ Eventless transitions are labeled “always” and often referred to as “alway
 
 [TODO: Why you might use an eventless transition with example.]
 
-[View this machine in the Stately Studio]().
+[View this machine in Stately Studio]().

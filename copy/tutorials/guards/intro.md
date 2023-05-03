@@ -8,4 +8,4 @@ Guards are numbered in the order they are checked and labeled with “if” or �
 
 ![A video player state machine with an initial Paused State and a Playing state. The transition from Playing to Paused has a guard numbered 1 and labeled ‘If time left is zero’. The first guard is joined to a second guard by a dotted line. The second guard is numbered 2 and is labeled ‘Else if time left is more than zero.’ The second guard’s transition targets the Playing state.](guards-2022-12-06-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=96f3bfce-147a-4aa0-ae2d-674cdfcb14ec).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=96f3bfce-147a-4aa0-ae2d-674cdfcb14ec).

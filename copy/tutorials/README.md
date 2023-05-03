@@ -5,7 +5,7 @@ This folder is the source of truth for our tutorials copy.
 Each folder represents a different concept or feature. Each file in the folder can be combined depending on the end platform:
 
 1. `intro.md`: always used, and always used first. This introduces the concept or feature.
-2. `howtos.md`: instructions on how to use the feature in the Stately Studio. This may not be used if we’re short on space, and can be replaced by…
+2. `howtos.md`: instructions on how to use the feature in Stately Studio. This may not be used if we’re short on space, and can be replaced by…
 3. `docs-link.md`: this is the link text and url that can be used in place of, or in addition to, the howtos, to direct the reader to further information. Currently these links link to the XState docs at xstate.js.org.
 
 ## Images

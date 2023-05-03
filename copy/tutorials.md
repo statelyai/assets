@@ -1,6 +1,6 @@
 ## Stately Studio tutorials
 
-The Stately Studio supports everything you need to build state machines and statecharts visually. We hope you find the following tutorials help you learn more about the statecharts concepts and using the Stately Studio. 
+Stately Studio supports everything you need to build state machines and statecharts visually. We hope you find the following tutorials help you learn more about the statecharts concepts and using Stately Studio.
 
 If you have further questions or want to discuss modeling with other statecharts fans, [join our Discord community](https://discord.gg/xstate) or [chat with us live in our next office hours](https://youtube.com/c/statelyai).
 
@@ -14,9 +14,7 @@ State machines model your application logic. Below is the logic for a video play
 
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](what-is-a-state-machine-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=dbcfca1c-075d-4cd6-a865-efcbd7be1544).
-
-
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=dbcfca1c-075d-4cd6-a865-efcbd7be1544).
 
 [Read more about state machines in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/)
 
@@ -26,8 +24,7 @@ Statecharts are fancy state machines used to model more complex logic.
 
 Statecharts are a visual extension to state machines that use boxes and arrows, much like flowcharts and sequence diagrams. Statecharts add extra features not available in ordinary state machines, including hierarchy (parent states), concurrency (parallel states) and communication (actors).
 
-When you make a state machine in the Stately Studio, it’s also a statechart!
-
+When you make a state machine in Stately Studio, it’s also a statechart!
 
 [Read more about statecharts in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/)
 
@@ -37,19 +34,17 @@ A state describes the machine’s status or mode, which could be as simple as *
 
 ![Video player state machine with an initial Paused state and a Playing state.](states-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=741f69fd-7f01-4932-9407-6871e225bb6d).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=741f69fd-7f01-4932-9407-6871e225bb6d).
 
 The rounded rectangle boxes are states. These states are “finite”; the machine can only move through the states you’ve pre-defined.
-
 
 ### How to create a state
 
 1. Select your machine or an existing state.
 2. Create a new state inside your machine or existing state:
-    - Use the **+ State** button that appears above the selected state, or:
-    - Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
-    - Double-click inside your machine or an existing state.
-
+   - Use the **+ State** button that appears above the selected state, or:
+   - Drag from the handles on the left, right and bottom sides of the selected state, and release to create a connecting transition, event and new state.
+   - Double-click inside your machine or an existing state.
 
 [Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#states)
 
@@ -63,22 +58,23 @@ In our video player, paused is the initial state because the video player is pau
 
 ![State machine with an initial state of Paused, transitioning through a Play event to the Playing state. From the Playing state back to the Paused state is a Pause event.](initial-state-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=3ebc8874-2294-480b-a06e-74845337cd8d).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=3ebc8874-2294-480b-a06e-74845337cd8d).
 
 ### How to change the initial state
 
 Each new machine or parent state will set the first new state as its initial state by default.
 
 #### Using the **quick actions** menu:
+
 1. Select the state you wish to make the new initial state.
 2. Right-click the state to bring up the **quick actions** menu.
 3. Choose **Mark as initial state** from the **quick actions** menu.
 
 #### Using the **State details** panel:
+
 1. Select the parent state or parent machine.
 2. Open the **State details** panel from the right tool menu.
 3. Choose the desired initial state from the Initial state dropdown menu.
-
 
 [Read more about initial states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#initial-state)
 
@@ -92,10 +88,9 @@ The arrows are transitions, and the rounded rectangles on the arrow’s lines ar
 
 ![A video player state machine with an initial Paused State and a Playing state. The Play event transitions from Paused to Playing. The Pause event transitions from Playing to Paused.](transitions-and-events-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=9630e3b7-9f8e-4dc9-8b55-661f854d28b7).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=9630e3b7-9f8e-4dc9-8b55-661f854d28b7).
 
 In the video player machine above, the events are *PLAY* and *PAUSE*. The *Play* event transitions from the *Paused* state to the *Playing* state. The *Pause* event transitions from the *Playing* state to the *Paused* state.
-
 
 ### How to add a transition and event
 
@@ -125,7 +120,6 @@ First select the transition or event you want to change. Then…
 2. Right-click the state to bring up the **quick actions** menu.
 3. Choose **Switch source and target** from the **quick actions** menu.
 
-
 [Read more about states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#transitions-and-events)
 
 ## Parent states
@@ -136,7 +130,7 @@ Child states are nested inside their parent states.
 
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](parent-states-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=9ba5377c-aab3-4465-8909-4eea499622fa).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=9ba5377c-aab3-4465-8909-4eea499622fa).
 
 In the video player above, the *Opened* state is a parent state to the *Playing*, *Paused*, and *Stopped* states. These states, their transitions, and their events are nested inside the *Opened* state.
 
@@ -165,7 +159,7 @@ A dashed line borders each region.
 
 ![A state machine containing two region states with dashed borders around the outside. The first region is the video state which is active at the same time as the audio state, and contains a playing and stopped state, with stop and play events. The other region is an audio state, which is active at the same time as the video state, and has muted and unmuted states, and unmute and mute events.](parallel-states-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=733de338-26cb-40a5-a0b5-b76bfc0405c3).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=733de338-26cb-40a5-a0b5-b76bfc0405c3).
 
 In the video player machine above, the video and audio states are active at the same time, which means the following combinations of states can happen simultaneously:
 
@@ -173,7 +167,6 @@ In the video player machine above, the video and audio states are active at the 
 - video playing, audio unmuted
 - video stopped, audio muted
 - video stopped, audio unmuted
-
 
 ### How to make a state a parallel state
 
@@ -190,7 +183,6 @@ First, select the parent state you want to set as a parallel state. Then…
 2. Open the **State details** panel from the right tool menu.
 3. Choose **Parallel** from the **Type** dropdown menu.
 
-
 [Read more about parallel states in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#compound-states)
 
 ## Final states
@@ -203,8 +195,7 @@ In the video player below, *Stopped* is the final child state in the *Opened*
 
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped, represented by an icon alongside the Stopped label of a square with a double border. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](final-state-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=c6f8ca35-25e3-4fc6-b4fe-c9994715852e).
-
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=c6f8ca35-25e3-4fc6-b4fe-c9994715852e).
 
 ### How to make a state a final state
 
@@ -234,7 +225,6 @@ The history state can be deep or shallow:
 
 [TODO: Why you might use a history state with example.]
 
-
 ### How to make a state a history state
 
 First, select the state you want to set as a history state for the parent state. Then…
@@ -251,7 +241,6 @@ First, select the state you want to set as a history state for the parent state.
 3. Choose **History** from the **Type** dropdown menu.
 4. Use the **History** toggle that appears when the state has a **History Type** to choose between **Shallow** and **Deep** history options.
 
-
 [Read more about history states in our docs](https://xstate.js.org/docs/guides/history.html#history)
 
 ## Guards
@@ -264,8 +253,7 @@ Guards are numbered in the order they are checked and labeled with “if” or �
 
 ![A video player state machine with an initial Paused State and a Playing state. The transition from Playing to Paused has a guard numbered 1 and labeled ‘If time left is zero’. The first guard is joined to a second guard by a dotted line. The second guard is numbered 2 and is labeled ‘Else if time left is more than zero.’ The second guard’s transition targets the Playing state.](guards-2022-12-06-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=96f3bfce-147a-4aa0-ae2d-674cdfcb14ec).
-
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=96f3bfce-147a-4aa0-ae2d-674cdfcb14ec).
 
 ## How to add a guard to an event
 
@@ -301,10 +289,9 @@ You can fire multiple entry and exit actions on a state. Top-level final states 
 
 ![Entry and exit actions video player](entry-and-exit-actions-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=222e2d7a-0ed6-4f2c-843a-e6646d717000).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=222e2d7a-0ed6-4f2c-843a-e6646d717000).
 
 In our video player, we have entry and exit actions on the Playing state. We use the entry action of playVideo to fire an effect playing the video on entry to the Playing state. We use the exit action of pauseVideo to fire an effect pausing the video when the Playing state is exited.
-
 
 ### How to add an entry action to a state
 
@@ -334,8 +321,7 @@ Eventless transitions are labeled “always” and often referred to as “alway
 
 [TODO: Why you might use an eventless transition with example.]
 
-[View this machine in the Stately Studio]().
-
+[View this machine in Stately Studio]().
 
 ### How to make an event into an eventless transition
 
@@ -347,6 +333,7 @@ First, select the event you want to replace with an eventless transition. Then�
 2. Choose **Always** from the **Event type** options.
 
 #### Using the **Transition details** panel
+
 1. Open the **Transition details** panel from the right tool menu.
 2. Choose **Always** from the **Event type** dropdown menu.
 
@@ -360,10 +347,9 @@ Delayed transitions are labeled “after” and often referred to as “after”
 
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](delayed-transition-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=5671366b-05cf-43f5-a09a-b88373ea27c1).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=5671366b-05cf-43f5-a09a-b88373ea27c1).
 
 In a video player, we might want the video to be *Closed* out of fullscreen mode a few seconds after the video has *Stopped*, instead of closing the fullscreen mode suddenly as soon as the video is stopped. The eventless transition above transitions from the *Stopped* state to the *Closed* state after 5 seconds.
-
 
 ### How to make an event into a delayed transition
 
@@ -381,7 +367,6 @@ First, select the event you want to replace with a delayed transition. Then…
 2. Choose **After** from the **Event type** dropdown menu.
 3. Specify the delay time in milliseconds using the **Delay** text input.
 
-
 [Read more about delayed transitions in our docs](https://xstate.js.org/docs/guides/introduction-to-state-machines-and-statecharts/#delayed-transitions)
 
 ## State done event
@@ -391,7 +376,6 @@ A **state done event** transitions from a parent state when one of its child s
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s an onDone event from the parent Opened state back to the Closed state.](state-done-event-2022-10-24-small.png)
 
 In the video player above, when the video player reaches the *Stopped* state, the *Opened* state transitions through the *onDone* state done event to the *Closed* state.
-
 
 ### How to add a state done event to a parent state
 
@@ -420,7 +404,6 @@ Self-transitions can be used to restart a state.
 
 [TODO: Why you might use self-transitions with example.]
 
-
 ### How to make an event into a self-transition
 
 #### Using the **quick actions** menu
@@ -447,10 +430,9 @@ You can invoke multiple actors on a single state. Top-level final states cannot 
 
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](invoked-actors-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=66f77051-089e-4b0a-9fa9-42e1f7598135).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=66f77051-089e-4b0a-9fa9-42e1f7598135).
 
 In the video player above, the *startVideo* actor is invoked when the video player is in the *Opened* state.
-
 
 ### How to invoke actors on a state
 
@@ -460,7 +442,6 @@ In the video player above, the *startVideo* actor is invoked when the video pl
 4. Add the source for the actor using the **src** text input.
 5. Add the ID for the actor using the **ID** text input.
 6. Save the invoked actor using the **Save** button.
-
 
 [Read more about actors in our docs](https://xstate.js.org/docs/about/concepts.html#actor-model)
 
@@ -515,7 +496,7 @@ Importing from code is helpful if you’ve already built machines while working 
 
 Your code should be formatted as a [`createMachine()` factory function](https://xstate.js.org/docs/guides/machines.html) before import. The importer has basic validation in case your machine has basic errors, including reminding you if the `createMachine` definition is missing.
 
-Caution: importing code will overwrite your current or selected machine unless you create a new machine from the **Machines list** inside a project. 
+Caution: importing code will overwrite your current or selected machine unless you create a new machine from the **Machines list** inside a project.
 
 You may have multiple `createMachine`s included in the code you insert in the text area, but the Studio will only import the first machine found in the code. We plan to support importing multiple machines in the future.
 
@@ -531,8 +512,8 @@ You may have multiple `createMachine`s included in the code you insert in the te
 1. Open the **Machines** list from the left drawer menu.
 2. Use the **...** triple dot icon alongside a machine to open the machine options menu.
 3. Use the **Import Code** option to open the import text area.
-5. Paste or type your machine code into the text area.
-6. Use the **Import** button to import your machine, overwriting the selected machine.
+4. Paste or type your machine code into the text area.
+5. Use the **Import** button to import your machine, overwriting the selected machine.
 
 #### Create a new machine inside a project using import code
 
@@ -556,7 +537,7 @@ Exporting as code is useful if you want to use your machine with [XState](https:
 1. Open the **Code** panel from the right tool menu.
 2. Use the JSON, JavaScript, or TypeScript buttons to display the code in your preferred format in the text area.
 3. Use the **Copy** button to copy the code to your clipboard.
-3. Paste into your code editor.
+4. Paste into your code editor.
 
 ### Export code from the Export machine dialog
 
@@ -574,10 +555,9 @@ The machine object will include your descriptions in the state or event's `descr
 
 ![Video player state machine containing closed and opened states. On the Play event, the Closed state transitions to the Opened state. The Opened state invokes a startVideo actor and has a description of “The video player should be in full-screen mode.” The Opened state contains Playing and Paused states, which are transitioned between using the Pause and Play events. There’s a Stop event from the Opened state that transitions to the final state of Stopped. There’s a delayed transition from the Stopped state back to the Closed state after 5 seconds.](descriptions-2022-10-24-small.png)
 
-[View this machine in the Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=574ede8a-a328-40fe-a4f9-c80fffb2c30a).
+[View this machine in Stately Studio](https://stately.ai/registry/editor/e13bef2b-bb13-4465-96ac-0bc25340688e?machineId=574ede8a-a328-40fe-a4f9-c80fffb2c30a).
 
 In the video player above, the text “The video player should be in full-screen mode” is a description of the *Opened* event.
-
 
 ### How to add a description to a state
 
@@ -592,4 +572,3 @@ In the video player above, the text “The video player should be in full-screen
 3. Write your event’s description in the **Description** text area.
 
 [Find out more about descriptions from our office hours](https://www.youtube.com/watch?v=pLU4IOiWW0U&t=142s)
-
