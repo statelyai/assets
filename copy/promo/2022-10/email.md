@@ -22,7 +22,7 @@ We’re excited to announce the release of [Stately Studio 1.0](https://stately.
 
 We want to thank all 10,000+ of you who signed up and tried out our [editor](https://stately.ai/editor), [extension](https://marketplace.visualstudio.com/items?itemName=statelyai.stately-vscode), and [visualizer](https://stately.ai/viz) during the Stately Editor beta. The beta period has reached its final state, but **these tools will remain completely free** for individual use.
 
-All our new Pro features are available with a 30-day free trial you can try with your whole team. Upgrade today using the Upgrade button in [the Stately Studio](https://stately.ai/editor) to get the current and future pro features at our lowest price, and be the first to access upcoming features, such as:
+All our new Pro features are available with a 30-day free trial you can try with your whole team. Upgrade today using the Upgrade button in [Stately Studio](https://stately.ai/editor) to get the current and future pro features at our lowest price, and be the first to access upcoming features, such as:
 
 - Stately GitHub integration for public/private repos
 - Machine revisions & visual diffs
